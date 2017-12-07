@@ -15,9 +15,9 @@
   if (mysqli_num_rows($result) > 0) {
 	  $_SESSION["lastname"] = $name;
 	  $_SESSION["password"] = $password;
-	  header('Location: http://localhost/');
+	  header('Location: http://localhost/ligonine/appointment.php');
   }else{
-    echo "User not found";
+	  header("Location: http://localhost/ligonine/failedLogin.php");
   }
 
 ?>
