@@ -7,7 +7,7 @@
 
   $id = $_POST["idPost"];
   $score = $_POST["scorePost"];
-  $time = date("Y-m-d H:i:s");
+  $time = date("Y-m-d");
   //Make Connetction
   $conn = new mysqli($servername,$server_username,$server_password,$dbName);
   //Check connection

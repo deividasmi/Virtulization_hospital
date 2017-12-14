@@ -22,6 +22,10 @@
 			<input type="email" name="email" id="email">
 		</div>
 		<div class="form-group">
+			<label for="password">Slaptažodis</label>
+			<input type="password" name="password" id="password">
+		</div>
+		<div class="form-group">
 			<input type="submit" value="Registruotis">
 		</div>
 		<div class="form-text">

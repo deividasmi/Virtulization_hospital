@@ -29,7 +29,7 @@
 		</div>
 		<div class="form-group">
 			<input type="submit" value="Registruotis">
-			<button>Pamirsau slaptazodi</button>
+			<a href="remind.php"><button type="button">Pamirsau slaptazodi</button></a>
 		</div>
 		<div class="form-text">
 			<p>Pranešame, kad dėl saugumo reikalavimų pakeistas ankstesnis registracijos būdas.</p>

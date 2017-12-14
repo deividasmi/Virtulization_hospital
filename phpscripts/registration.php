@@ -5,6 +5,7 @@
   $lastname = $_POST["lastname"];
   $snumber = $_POST["snumber"];
   $email = $_POST["email"];
+  $password = $_POST["password"];
 
   //validation
 
@@ -13,9 +14,9 @@
 
 
   if (mysqli_num_rows($result) == 0) {
-    $sql = "INSERT INTO users (lastname, email, snumber) VALUES ('".$lastname."','". $email."','". $snumber."')";
+    $sql = "INSERT INTO users (lastname, password, email, snumber) VALUES ('".$lastname."','". $password."','".$email."','". $snumber."')";
     $result = mysqli_query($conn,$sql);
-    echo "Registration complete";
+    header('Location: http://localhost/ligonine/index.php');
   }else{
     echo "User exists";
   }

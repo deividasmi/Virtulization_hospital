@@ -17,8 +17,8 @@
 	2. Jūs nesate užregistruotas jokioje Vilniaus rajono centrinės poliklinikos apylinkėje. Norėdami gydytis Vilniaus rajono centrinėje poliklinikoje, užpildykite <a href="https://www.vrcp.lt/go.php/Pacient%C5%B3%20registracija%20pas%20%C5%A1eimos%20gydytojus464">prašymą</a> gydytis Vilniaus rajono centrinėje poliklinikoje ir atvykite.
 	3. Įstaigos duomenų bazėje klaidingai įvesta Jūsų pavardė arba asmens kodas. Šiuo atveju, telefonu arba atvykę į polikliniką, registratūroje turite paprašyti, kad jūsų duomenys būtų patikslinti.
 	</div>
-	<div>
-		<button>pakartoti registraciją</button>
+	<div class="text">
+		<a href="index.php">Pakartoti registraciją</a>
 	</div>
 </body>
 </html>
