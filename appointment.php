@@ -15,8 +15,8 @@
 			var year = today.getFullYear();
 			date.setAttribute("min", year+"-"+mm+"-"+dd);
 			//Get doctors
-			$.post( "./phpscripts/get_doctors.php", function( data ) {
-				console.log('hi');
+			//$.post( "./phpscripts/get_doctors.php", function( data ) {
+			//	console.log('hi');
 			});
 		});
 	</script>
@@ -25,20 +25,14 @@
 	<?php include 'imports/main_menu.php'; ?>
 	<?php require 'imports/connect.php'; ?>
 	<form method="POST" action="phpscripts/makeAppointment.php">
-		<div class="form-group">
-			<label for="profession">Specialybė</label>
-			<select id="professions">
-				<?php include 'phpscripts/get_professions.php'; ?>
-			</select>
-		</div>
-		<!--
+		
 		<div class="form-group">
 			<label for="lastname">Daktaras</label>
 			<select>
 				<?php include 'phpscripts/get_doctors.php'; ?>
 			</select>
 		</div>
-		-->
+		
 		<div class="form-group">
 			<label for="password">Data</label>
 			<input type="date" name="date" id="date">
