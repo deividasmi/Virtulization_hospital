@@ -17,7 +17,7 @@
     $sql = "INSERT INTO users (lastname, password, email, snumber) VALUES ('".$lastname."','". $password."','".$email."','". $snumber."')";
     $result = mysqli_query($conn,$sql);
     //header("Location: http://".$servername."/ligonine/index.php");
-    header("Location: http://".$servername."/index.php");
+    header("Location: http://".$_SERVER["SERVER_ADDR"]."/index.php");
   }else{
     echo "User exists";
   }

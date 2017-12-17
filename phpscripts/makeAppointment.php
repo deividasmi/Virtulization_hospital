@@ -23,10 +23,10 @@
 			$sql_rez = "INSERT INTO appointments (doctor_id, user_id, time) VALUES (".$doc_id.",".$row['id'].",".$time.")";
 	        $result2 = mysqli_query($conn,$sql_rez);
         }
-        header("Location: http://".$servername."/success_appointment.php");
+        header("Location: http://".$_SERVER["SERVER_ADDR"]."/success_appointment.php");
     	//header("Location: http://".$servername."/ligonine/success_appointment.php");
     }else{
 		//header("Location: http://".$servername."/ligonine/failed_appointment.php");
-		header("Location: http://".$servername."/failed_appointment.php");
+		header("Location: http://".$_SERVER["SERVER_ADDR"]."/failed_appointment.php");
 	}
 ?>
