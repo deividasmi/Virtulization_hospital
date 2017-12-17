@@ -1,25 +1,30 @@
 <?php
+	require '../imports/connect.php';
+    session_start();
+    $usr_lname = $_SESSION["lastname"];
+    $doc_id = $_POST['doctor'];
+    $hour = intval($_POST['hour']);
+    $time =  $hour*3600 + strtotime($_POST['date']);    //date("Y-m-d h:i:s", hour*3600 + strtotime($_POST['date']));
 
-  $servername = "localhost";
-  $server_username = "root";
-  $server_password = "";
-  $dbName = "endless_runner";
+    
+    $sql_user = "SELECT * FROM users WHERE lastname = '".$usr_lname."'";
+   
+    $sql_time = "SELECT * FROM appointments WHERE time ='".$time."'";
 
-  $id = $_POST["idPost"];
-  $score = $_POST["scorePost"];
-  $time = date("Y-m-d");
-  //Make Connetction
-  $conn = new mysqli($servername,$server_username,$server_password,$dbName);
-  //Check connection
-  if(!$conn){
-    die("Connection Failed". mysqli_connect_error());
-  }
-  //else echo("Connection Success");
+    $result_time = mysqli_query($conn,$sql_time);
 
-
-
-  $sql = "INSERT INTO scores (userId, score, time) VALUES ('".$id. "','". $score."','". $time."')";
-  $result = mysqli_query($conn,$sql);
-
-
+   // $sql_rez = "INSERT INTO appointments (doctor_id, user_id, time) VALUES (".$doc_id.","."1".",".$time.")";
+   // $result2 = mysqli_query($conn,$sql_rez);
+   //echo mysqli_num_rows($result_time);
+    if (mysqli_num_rows($result_time) == 0) {
+        $result_usr = mysqli_query($conn,$sql_user);
+		//$row = mysql_fetch_assoc($result_usr);
+		while($row = mysqli_fetch_assoc($result_usr)){
+			$sql_rez = "INSERT INTO appointments (doctor_id, user_id, time) VALUES (".$doc_id.",".$row['id'].",".$time.")";
+	        $result2 = mysqli_query($conn,$sql_rez);
+        }
+    	header("Location: http://localhost/ligonine/success_appointment.php");
+    }else{
+		header("Location: http://localhost/ligonine/failed_appointment.php");
+	}
 ?>

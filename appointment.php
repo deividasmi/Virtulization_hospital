@@ -4,9 +4,8 @@
 	<link rel="stylesheet" href="css/style.css">
 	<title>Ligonine</title>
 	<meta charset='UTF-8'>
-	<script src="js/jquery-3.2.1.min.js"></script>
 	<script>
-		$(document).ready(function(){
+		window.onload = function(){
 			//Data
 			var date = document.getElementById('date');
 			var today = new Date();
@@ -15,20 +14,19 @@
 			var year = today.getFullYear();
 			date.setAttribute("min", year+"-"+mm+"-"+dd);
 			//Get doctors
-			//$.post( "./phpscripts/get_doctors.php", function( data ) {
-			//	console.log('hi');
-			});
-		});
+			
+		};
 	</script>
 </head>
 <body>
+	
 	<?php include 'imports/main_menu.php'; ?>
 	<?php require 'imports/connect.php'; ?>
 	<form method="POST" action="phpscripts/makeAppointment.php">
 		
 		<div class="form-group">
 			<label for="lastname">Daktaras</label>
-			<select>
+			<select name=doctor>
 				<?php include 'phpscripts/get_doctors.php'; ?>
 			</select>
 		</div>
@@ -41,6 +39,7 @@
 		<div class="form-group">
 			<input type="submit" value="Registruotis">
 		</div>
+		<input type="hidden" name="test" value="<?php echo $_SESSION['lastname']; ?>">
 	</form>
 </body>
 </html>
