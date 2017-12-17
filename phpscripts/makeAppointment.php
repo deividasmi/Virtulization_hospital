@@ -9,7 +9,7 @@
     
     $sql_user = "SELECT * FROM users WHERE lastname = '".$usr_lname."'";
    
-    $sql_time = "SELECT * FROM appointments WHERE time ='".$time."'";
+    $sql_time = "SELECT * FROM appointments WHERE time ='".$time."' AND doctor_id ='".$doc_id."'";
 
     $result_time = mysqli_query($conn,$sql_time);
 
