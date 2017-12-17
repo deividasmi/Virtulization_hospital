@@ -16,7 +16,7 @@
   if (mysqli_num_rows($result) == 0) {
     $sql = "INSERT INTO users (lastname, password, email, snumber) VALUES ('".$lastname."','". $password."','".$email."','". $snumber."')";
     $result = mysqli_query($conn,$sql);
-    header('Location: http://localhost/ligonine/index.php');
+    header("Location: http://".$servername."/ligonine/index.php");
   }else{
     echo "User exists";
   }

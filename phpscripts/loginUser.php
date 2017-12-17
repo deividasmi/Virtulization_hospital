@@ -19,9 +19,9 @@
 	  $_SESSION["lastname"] = $name;
 	  $_SESSION["password"] = $password;
 	
-	  header('Location: http://localhost/ligonine/appointment.php');
+	  header("Location: http://".$servername."/ligonine/appointment.php");
   }else{
-	  header("Location: http://localhost/ligonine/failedLogin.php");
+	  header("Location: http://".$servername."/ligonine/failedLogin.php");
   }
 
 ?>
