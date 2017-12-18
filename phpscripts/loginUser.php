@@ -18,11 +18,11 @@
 	  //echo $name;
 	  $_SESSION["lastname"] = $name;
 	  $_SESSION["password"] = $password;
-	  header("Location: http://".$_SERVER["SERVER_ADDR"]."/appointment.php");
+	  header("Location: http://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]."/appointment.php");
 	  //header("Location: http://".$servername."/ligonine/appointment.php");
   }else{
 	  //header("Location: http://".$servername."/ligonine/failedLogin.php");
-	  header("Location: http://".$_SERVER["SERVER_ADDR"]."/failedLogin.php");
+	  header("Location: http://".$_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"]."/failedLogin.php");
   }
 
 ?>
